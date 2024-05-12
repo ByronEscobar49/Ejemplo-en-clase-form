@@ -46,40 +46,40 @@ namespace Ejemplo_en_clase_form
 
         private void buttonOpen_Click(object sender, EventArgs e)
         {
-            FrmRegistro frmRegi=new FrmRegistro();
+            FrmRegistro frmRegi = new FrmRegistro();
             frmRegi.Show();
         }
         private int intentos = 0;
         private void login_Click(object sender, EventArgs e)
         {
             string usr = usu.Text.ToLower();
-            string pwd= con.Text.ToLower();
+            string pwd = con.Text.ToLower();
 
-            if (intentos>=2)
+            if (intentos >= 2)
             {
-                MessageBox.Show("Ya no le quedan mas intentos");
-                button3
+                MessageBox.Show("Ya no tiene mas intentos");
+                login.Enabled = false;
+            }
+            else if (usr.Equals("admin") && pwd.Equals("admin"))
+            {
+                FrmRegistro fmrReg = new FrmRegistro();
+                fmrReg.Show();
+            }
+            else if (usr == "" || pwd == "")
+            {
+                MessageBox.Show("no puede dejar en blanco");
             }
             else
-            {
-                if (usr.Equals("admin") && pwd.Equals("admin"))
-                {
-                    FrmRegistro registro = new FrmRegistro();
-                    registro.Show();
-                }
-                else if (usr == ""|| pwd == "")
-                {
-                    MessageBox.Show("No puede dejar las casillas en blanco");
-                }
-                else
-                {
-                    MessageBox.Show("Usuario y contraseña erroneos\nQuedan {2-intentos}");
-                    usrTe
-                }
-            }
-        }
 
-        private void label1_Click(object sender, EventArgs e)
+                MessageBox.Show("Usuario y contraseña erroneos");
+            usu.Clear();
+            con.Clear();
+            intentos++;
+        }
+    
+
+
+private void label1_Click(object sender, EventArgs e)
         {
 
         }
