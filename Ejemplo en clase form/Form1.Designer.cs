@@ -45,6 +45,7 @@
             this.label1.Size = new System.Drawing.Size(321, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingrese sus Credenciales";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -71,6 +72,7 @@
             this.usu.Name = "usu";
             this.usu.Size = new System.Drawing.Size(100, 20);
             this.usu.TabIndex = 3;
+            this.usu.TextChanged += new System.EventHandler(this.usu_TextChanged);
             // 
             // con
             // 

@@ -49,15 +49,16 @@ namespace Ejemplo_en_clase_form
             FrmRegistro frmRegi=new FrmRegistro();
             frmRegi.Show();
         }
-
+        private int intentos = 0;
         private void login_Click(object sender, EventArgs e)
         {
-            string usr = usu.Text;
-            string pwd= con.Text;
+            string usr = usu.Text.ToLower();
+            string pwd= con.Text.ToLower();
 
-            if (usr == null || pwd == null)
+            if (intentos>=2)
             {
-                MessageBox.Show("no puede dejar en blanco");
+                MessageBox.Show("Ya no le quedan mas intentos");
+                button3
             }
             else
             {
@@ -66,11 +67,26 @@ namespace Ejemplo_en_clase_form
                     FrmRegistro registro = new FrmRegistro();
                     registro.Show();
                 }
+                else if (usr == ""|| pwd == "")
+                {
+                    MessageBox.Show("No puede dejar las casillas en blanco");
+                }
                 else
                 {
-                    MessageBox.Show("Usuario y contraseña erroneos");
+                    MessageBox.Show("Usuario y contraseña erroneos\nQuedan {2-intentos}");
+                    usrTe
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usu_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
